@@ -1,39 +1,36 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-
+#Importamos la libreria reflex y la llamamos rx para llamarla despues
 import reflex as rx
+from growstreet_web.components.navbar import navbar
+from growstreet_web.views.header.header import header
+from growstreet_web.views.links.links import links
+from growstreet_web.components.footer import footer
 
-from rxconfig import config
+#Importamos el archivo styles como styles para usar sus variables
+import growstreet_web.styles.styles as styles
 
-
+#Los estados sirven para manejar logica python en la web
 class State(rx.State):
-    """The app state."""
+    pass
 
-    ...
-
-
+#Por recomendacion de reflex, la funcion de la pagina principal
+#se llamara index y devolvera un componente reflex
+#Devuelve lo que quiero mostrar por pantalla
 def index() -> rx.Component:
-    # Welcome Page (Index)
-    return rx.container(
-        rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Bienvenidos a Grow Street", size="9"),
-            rx.text(
-                "Tu tienda de cultivo",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="5",
+    return rx.box(
+            navbar(),
+        # BOTON MODO OSCURO rx.color_mode.button(position="top-right", margin = '10px'),
+            rx.vstack(
+                header(),
+                links(),
+                align = "center",
+                
             ),
-            rx.link(
-                rx.button("Ingresar al sitio"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
-                is_external=True,
+            rx.center(
+                footer(),
             ),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
-        ),
-        rx.logo(),
-    )
+          )
 
-
+#Para ejecutar la app debemos definirla
 app = rx.App()
 app.add_page(index)
+app._compile()
