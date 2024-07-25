@@ -1,9 +1,13 @@
 #Importamos la libreria reflex y la llamamos rx para llamarla despues
 import reflex as rx
+
+import growstreet_web.styles.styles as styles
 from growstreet_web.components.navbar import navbar
 from growstreet_web.views.header.header import header
 from growstreet_web.views.links.links import links
 from growstreet_web.components.footer import footer
+
+
 
 #Importamos el archivo styles como styles para usar sus variables
 import growstreet_web.styles.styles as styles
@@ -17,20 +21,30 @@ class State(rx.State):
 #Devuelve lo que quiero mostrar por pantalla
 def index() -> rx.Component:
     return rx.box(
-            navbar(),
+            navbar(),           
         # BOTON MODO OSCURO rx.color_mode.button(position="top-right", margin = '10px'),
+        #Creo un stack en vertical para agrupar los siguientes elementos
             rx.vstack(
-                header(),
-                links(),
+                #Componentes que estan dentro del stack
+                header(),            
+                #Propiedades del stack
                 align = "center",
-                
+                width = "100%",
+                padding_y = styles.Size.BIG.value,                
             ),
+            rx.vstack(
+                links(),
+                # margin_x = styles.Size.BIG.value,
+            ),
+            #Hacer que el footer este en el centro
             rx.center(
                 footer(),
             ),
           )
 
 #Para ejecutar la app debemos definirla
-app = rx.App()
+app = rx.App(
+    style = styles.BASE_STYLE
+)
 app.add_page(index)
 app._compile()

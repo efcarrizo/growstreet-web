@@ -9,18 +9,18 @@ Version 0.1 - Prueba de Reflex
 
 Version 0.2 - Components, styling
     Creación de componentes:
-        *footer: Un stack vertical (rx.vstack) que contiene una imagen y texto para reutilizar en otras paginas,  align = 'center', 
+        footer: Un stack vertical (rx.vstack) que contiene una imagen y texto para reutilizar en otras paginas,  align = 'center', 
                         margin = '20px' .
 
-        *link_button: Un boton dentro de un (rx.link) que toma como parametro el texto y el url
+        link_button: Un boton dentro de un (rx.link) que toma como parametro el texto y el url
         cada vez que lo invocamos crea un boton con esos parametros, abriendo una pestaña externa
         gracias al is_external = True.
 
-        *navbar: Un stack que contiene una imagen del logo con el texto Grow Street
+        navbar: Un stack que contiene una imagen del logo con el texto Grow Street
 
-        *links: Componente que contiene 4 botones creados con el componente link button para reutilizar en distintas paginas.
+        links: Componente que contiene 4 botones creados con el componente link button para reutilizar en distintas paginas.
 
-        *header: Un stack con una imagen, texto y un section que contiene un texto dentro.
+        header: Un stack con una imagen, texto y un section que contiene un texto dentro.
 
         Algunos componentes fueron creados dentro de carpetas para hacer las importaciones de las funciones creadas, ejemplo header que se importaba:
             from growstreet_web.views.header.header import header
@@ -29,3 +29,15 @@ Version 0.2 - Components, styling
 
     Creación de estilos
         Todavía no se comenzo el estilado rigido, pero empezamos con el seteo de constantes que seran reutilizadas para propositos generales, como medidas y paletas de colores.
+
+Version 0.3 Styling
+
+    navbar: Se hizo una modificacion en la foto y el texto de la barra de navegación, se presento la posible estructura.
+    
+    title: Se creo un componente para los titulos y se estilo en el
+    archivo style.py, para no utilizar las propiedades del heading
+    se estilo mediante props de CSS
+
+    links: Se agregaron iconos y se dejaron presentados los links, todavia hay que realizar modificaciones y posicionarlos.
+
+    header: Se le agrego el title ahi para realizar pruebas.
