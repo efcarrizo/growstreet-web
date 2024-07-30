@@ -6,6 +6,7 @@ from growstreet_web.components.navbar import navbar
 from growstreet_web.views.header.header import header
 from growstreet_web.views.links.links import links
 from growstreet_web.components.footer import footer
+from growstreet_web.components.products_card import products_card
 
 
 
@@ -29,15 +30,19 @@ def index() -> rx.Component:
                 header(),            
                 #Propiedades del stack
                 align = "center",
-                width = "100%",
-                padding_y = styles.Size.BIG.value,                
+                width = "100%",             
+            ),
+            rx.vstack(
+                products_card(),
+                align = "center",
+                   
             ),
             rx.vstack(
                 links(),
-                # margin_x = styles.Size.BIG.value,
+                margin_y = styles.Size.BIG.value,
             ),
             #Hacer que el footer este en el centro
-            rx.center(
+            rx.vstack(
                 footer(),
             ),
           )

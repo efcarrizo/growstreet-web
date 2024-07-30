@@ -41,3 +41,18 @@ Version 0.3 Styling
     links: Se agregaron iconos y se dejaron presentados los links, todavia hay que realizar modificaciones y posicionarlos.
 
     header: Se le agrego el title ahi para realizar pruebas.
+
+Version 0.4 Styling
+
+    link_icon: Se creo un nuevo componente que pide como parametro el nombre del icono y la direccion, se utiliza en links_icon
+    Estan dentro del footer(todavia faltan modificaciones).
+
+    products_card : Se modificaron los tamaños de las cards(todavia faltan modificaciones).
+
+    Se modifico dentro del header el padding del section para que no queden las letras en los limites.
+
+    
+
+    
+
+    
